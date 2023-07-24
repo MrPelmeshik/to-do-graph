@@ -1,6 +1,6 @@
 import React from "react";
-import headerFieldStyle from './style.module.css';
-import {IHeaderField} from "./type";
+import headerStyle from './style.module.css';
+import {IHeaderComponent} from "./type";
 import {presetGpnDark, presetGpnDefault, presetGpnDisplay, ThemePreset} from "@consta/uikit/Theme";
 import {Header, HeaderLogo, HeaderMenu, HeaderModule} from "@consta/uikit/Header";
 import {Tag} from "@consta/uikit/Tag";
@@ -34,7 +34,7 @@ export const getThemePreset = (item: ThemeItem): ThemePreset => {
 };
 
 
-export const HeaderField: React.FC<IHeaderField>
+export const HeaderComponent: React.FC<IHeaderComponent>
     = ({theme, setTheme}) =>
 {
     return <Header className={'shadowCard'}
@@ -47,7 +47,7 @@ export const HeaderField: React.FC<IHeaderField>
                             {/*<Tag icon={IconTest} size={'xs'} label={'alpha'} mode={'info'} className={headerFieldStyle.headerTag}/>*/}
                         </HeaderLogo>
                         <HeaderMenu items={[]}/>
-                        </>
+                    </>
                    }
                    rightSide={
                     <>

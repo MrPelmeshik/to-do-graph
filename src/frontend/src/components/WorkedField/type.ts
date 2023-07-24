@@ -1,3 +1,3 @@
-export interface IWorkedField {
+export interface IWorkedFieldComponent {
 
 }

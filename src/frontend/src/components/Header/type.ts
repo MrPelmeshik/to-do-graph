@@ -1,7 +1,7 @@
 import {Dispatch} from "react";
-import {ThemeItem} from "./HeaderField";
+import {ThemeItem} from "./HeaderComponent";
 
-export interface IHeaderField {
+export interface IHeaderComponent {
     theme: ThemeItem;
     setTheme:Dispatch<ThemeItem>;
 }

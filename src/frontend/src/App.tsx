@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import appStyle from './App.module.css';
-import {getThemePreset, HeaderField, ThemeItem, themes} from "./components/HeaderField/HeaderField";
-import {MainField} from "./components/MainField/MainField";
-import {FooterField} from "./components/FooterField/FooterField";
-import {MenuField} from "./components/MenuField/MenuField";
+import {getThemePreset, HeaderComponent, ThemeItem, themes} from "./components/Header/HeaderComponent";
+import {MainComponent} from "./components/Main/MainComponent";
+import {FooterComponent} from "./components/Footer/FooterComponent";
+import {MenuComponent} from "./components/Menu/MenuComponent";
 import {Layout} from "@consta/uikit/Layout";
 import {Theme} from "@consta/uikit/Theme";
 
@@ -15,19 +15,19 @@ export const App = () => {
       <Layout direction={'column'}
               className={appStyle.app}>
         <Layout flex={0} className={'z100'}>
-          <HeaderField theme={theme} setTheme={setTheme}/>
+          <HeaderComponent theme={theme} setTheme={setTheme}/>
         </Layout>
         <Layout flex={10}>
           <Layout flex={0} className={'z10'}>
-            <MenuField/>
+            <MenuComponent/>
           </Layout>
           <Layout flex={1}>
-            <MainField/>
+            <MainComponent/>
           </Layout>
         </Layout>
         {/*<Layout flex={1} className={'z100'}
                 verticalAlign={'bottom'}>
-          <FooterField/>
+          <Footer/>
         </Layout>*/}
       </Layout>
   </Theme>
