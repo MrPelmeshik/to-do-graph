@@ -1,8 +1,8 @@
 import React from "react";
-import headerFieldStyle from './HeaderField.module.css';
+import headerFieldStyle from './style.module.css';
 import {IHeaderField} from "./type";
 import {presetGpnDark, presetGpnDefault, presetGpnDisplay, ThemePreset} from "@consta/uikit/Theme";
-import {Header} from "@consta/uikit/Header";
+import {Header, HeaderLogo, HeaderMenu, HeaderModule} from "@consta/uikit/Header";
 import {Tag} from "@consta/uikit/Tag";
 import {ThemeToggler} from "@consta/uikit/ThemeToggler";
 import {Text} from "@consta/uikit/Text";
@@ -25,7 +25,7 @@ const getItemIcon = (item: ThemeItem): IconComponent => {
     }
 };
 
-const getTheme = (item: ThemeItem): ThemePreset => {
+export const getThemePreset = (item: ThemeItem): ThemePreset => {
     switch (item) {
         case 'Default': return presetGpnDefault;
         case 'Dark': return presetGpnDark;
@@ -40,23 +40,28 @@ export const HeaderField: React.FC<IHeaderField>
     return <Header className={'shadowCard'}
                    leftSide={
                     <>
-                        <Text as={'span'} size={'l'} weight={'bold'} view={'primary'}>
-                            to-do-graph
-                        </Text>
-                        {/*<Tag icon={IconTest} size={'xs'} label={'alpha'} mode={'info'} className={headerFieldStyle.headerTag}/>*/}
-                    </>
+                        <HeaderLogo>
+                            <Text as={'span'} size={'l'} weight={'bold'} view={'primary'}>
+                                to-do-graph
+                            </Text>
+                            {/*<Tag icon={IconTest} size={'xs'} label={'alpha'} mode={'info'} className={headerFieldStyle.headerTag}/>*/}
+                        </HeaderLogo>
+                        <HeaderMenu items={[]}/>
+                        </>
                    }
                    rightSide={
                     <>
-                        <ThemeToggler items={themes}
-                                      value={theme}
-                                      getItemKey={(item: any) => item}
-                                      getItemLabel={(item: any) => item}
-                                      getItemIcon={getItemIcon}
-                                      size={'xs'}
-                                      onChange={({value}) => setTheme(value)}
-                                      direction={'downStartLeft'}
-                        />
+                        <HeaderModule>
+                            <ThemeToggler items={themes}
+                                          value={theme}
+                                          getItemKey={(item: any) => item}
+                                          getItemLabel={(item: any) => item}
+                                          getItemIcon={getItemIcon}
+                                          // size={'xs'}
+                                          onChange={({value}) => setTheme(value)}
+                                          direction={'downStartLeft'}
+                            />
+                        </HeaderModule>
                     </>
                    }
     />

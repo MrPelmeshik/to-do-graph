@@ -1,10 +1,11 @@
 import {IMainField} from "./type";
-import mainFieldStyle from './MainField.module.css';
+import mainFieldStyle from './style.module.css';
 import React from "react";
+import {WorkedField} from "../WorkedField/WorkedField";
 
 export const MainField: React.FC<IMainField>
     = ({}) => {
     return <div className={mainFieldStyle.main}>
-        Main component
+        <WorkedField />
     </div>
 }

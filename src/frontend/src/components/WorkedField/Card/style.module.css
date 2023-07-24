@@ -1,0 +1,18 @@
+.main {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    padding: 8px;
+    background-color: aliceblue;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+}
+
+.main:hover {
+    scale: 1.05;
+    box-shadow: var(--color-control-bg-border-default) 0 0 15px 0vw;
+}

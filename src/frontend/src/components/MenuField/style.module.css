@@ -1,0 +1,13 @@
+.menu {
+    position: absolute;
+    left: calc(var(--space-4xl) - 30vw);
+    width: 30vw;
+    height: 60vh;
+    transition: .5s ease-in-out;
+
+    background-color: var(--color-bg-default);
+}
+
+.menu:hover {
+    left: 0;
+}
