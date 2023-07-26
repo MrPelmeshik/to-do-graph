@@ -1,9 +1,9 @@
 import React, {JSX, useEffect, useRef, useState} from "react";
 import workedFieldStyle from './style.module.css';
 import {IWorkedFieldComponent} from "./type";
-import {CardComponent} from "./Card/CardComponent";
-import {ICard} from "./Card/ICard";
-import {ICardPosition} from "./Card/ICardPosition";
+import {CardComponent, ICard} from "./Card";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 
 
 export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
@@ -106,7 +106,12 @@ export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
         };
     }, [setViewport]);
 
-    return <div className={workedFieldStyle.field}
+    return <DndProvider backend={HTML5Backend}>
+        {getCards()}
+    </DndProvider>
+
+
+    /*return <div className={workedFieldStyle.field}
                 ref={layerRef}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
@@ -120,8 +125,10 @@ export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
                      }px) scale(${viewport.zoom})`
                  }}
             >
-                {getCards()}
+                <DndProvider backend={HTML5Backend}>
+                    {getCards()}
+                </DndProvider>
             </div>
         </div>
-    </div>
+    </div>*/
 }

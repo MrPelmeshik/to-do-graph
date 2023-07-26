@@ -1,7 +1,11 @@
 import {Dispatch} from "react";
-import {ThemeItem} from "./HeaderComponent";
+import {IThemeItem} from "./ThemeSelector";
+import {IPageItem} from "./Pagination";
 
 export interface IHeaderComponent {
-    theme: ThemeItem;
-    setTheme:Dispatch<ThemeItem>;
+    theme: IThemeItem;
+    setTheme:Dispatch<IThemeItem>;
+
+    page: IPageItem;
+    setPage: Dispatch<IPageItem>;
 }
