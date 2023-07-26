@@ -2,12 +2,14 @@ import React from "react";
 import {IPaginationComponent} from "./type";
 import paginationStyle from './style.module.css';
 import {Badge} from "@consta/uikit/Badge";
-import {IPageItem} from "./IPageItem";
+import {IPageItem} from "../../../types";
 import {Tabs} from "@consta/uikit/Tabs";
-import {pages} from "./PaginationService";
+import {PAGES} from "../../../definitions";
+import {useAppSelector} from "../../../store/сonfigureStore";
+import {setPage} from "../../../store/page/actions";
+import {useDispatch} from "react-redux";
 
 
-const getPageLabel = (page: IPageItem) => page.label;
 const getRightSideContent = (page: IPageItem) => page.tag
     ? <Badge size={'xs'}
              label={page.tag.label}
@@ -19,12 +21,14 @@ const getRightSideContent = (page: IPageItem) => page.tag
     : null;
 
 
-export const PaginationComponent: React.FC<IPaginationComponent>
-    = ({page, setPage}) => {
-    return <Tabs value={page}
-                 onChange={({ value }) => setPage(value)}
-                 items={pages}
-                 getItemLabel={getPageLabel}
+export const PaginationComponent: React.FC<IPaginationComponent> = ({}) => {
+    const dispatch = useDispatch();
+    const currentPage = useAppSelector(state => state.page);
+    const switchPage = (pageId: any) => dispatch(setPage(pageId));
+
+    return <Tabs items={PAGES}
+                 value={currentPage}
+                 onChange={({ value }) => switchPage(value.key)}
                  getItemRightSide={getRightSideContent}
                  size={'s'}
                  view={'clear'}

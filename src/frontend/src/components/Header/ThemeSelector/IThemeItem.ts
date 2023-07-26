@@ -1,1 +1,0 @@
-export type IThemeItem = 'Default' | 'Dark' | 'Display';

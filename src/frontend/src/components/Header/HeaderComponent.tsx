@@ -7,22 +7,18 @@ import {PaginationComponent} from "./Pagination";
 import {ThemeSelectorComponent} from "./ThemeSelector";
 
 
-export const HeaderComponent: React.FC<IHeaderComponent>
-    = ({
-           theme, setTheme,
-           page, setPage
-    }) =>
+export const HeaderComponent: React.FC<IHeaderComponent> = ({}) =>
 {
     return <Header className={'shadowCard'}
                    leftSide={
                     <div className={headerStyle.field}>
                         <LogoComponent />
-                        <PaginationComponent page={page} setPage={setPage}/>
+                        <PaginationComponent />
                     </div>
                    }
                    rightSide={
                     <div  className={headerStyle.field}>
-                        <ThemeSelectorComponent theme={theme} setTheme={setTheme}/>
+                        <ThemeSelectorComponent />
                     </div>
                    }
     />
