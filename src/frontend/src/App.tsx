@@ -22,9 +22,9 @@ export const App = () => {
           <WorkAreaComponent/>
         </Layout>
       </Layout>
-      {/*<Layout flex={1} className={'z10'} verticalAlign={'bottom'}>
+      <Layout flex={1} className={'z10'} verticalAlign={'bottom'}>
         <FooterComponent/>
-      </Layout>*/}
+      </Layout>
     </Layout>
   </Theme>
 }
