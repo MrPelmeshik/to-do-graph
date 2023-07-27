@@ -1,10 +1,9 @@
 import {IFooterComponent} from "./type";
 import React from "react";
-import footerStyle from './style.module.css';
-import {Text} from "@consta/uikit/Text";
+import css from './style.module.css';
 
 export const FooterComponent: React.FC<IFooterComponent>
     = ({}) => {
-    return <footer className={[footerStyle.main, 'shadowCard'].join(' ')}>
+    return <footer className={[css.main, 'shadowCard'].join(' ')}>
     </footer>
 }

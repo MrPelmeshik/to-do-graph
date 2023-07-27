@@ -3,6 +3,6 @@ export {HeaderComponent} from "./Header";
 export {MenuComponent} from "./Menu";
 export {
     WorkAreaComponent,
-    TestFieldComponent,
+    DnDComponent,
     GraphComponent,
 } from "./WorkArea";

@@ -1,9 +1,7 @@
 import React, {JSX, useEffect, useRef, useState} from "react";
-import workedFieldStyle from './style.module.css';
+import css from './style.module.css';
 import {IGraphComponent} from "./type";
 import {CardComponent, ICard} from "./Card";
-import {DndProvider} from "react-dnd";
-import {HTML5Backend} from "react-dnd-html5-backend";
 
 
 export const GraphComponent: React.FC<IGraphComponent>
@@ -105,14 +103,14 @@ export const GraphComponent: React.FC<IGraphComponent>
         };
     }, [setViewport]);
 
-    return <div className={workedFieldStyle.field}
+    return <div className={css.field}
                 ref={layerRef}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
                 onMouseMove={handleMouseMove}
     >
-        <div className={workedFieldStyle.container}>
-            <div className={workedFieldStyle.nodesContainer}
+        <div className={css.container}>
+            <div className={css.nodesContainer}
                  style={{
                      transform: `translate(${viewport.offset.x * viewport.zoom}px, ${
                          viewport.offset.y * viewport.zoom

@@ -1,6 +1,6 @@
 import React from "react";
 import {IPaginationComponent} from "./type";
-import paginationStyle from './style.module.css';
+import css from './style.module.css';
 import {Badge} from "@consta/uikit/Badge";
 import {IPageItem} from "../../../types";
 import {Tabs} from "@consta/uikit/Tabs";

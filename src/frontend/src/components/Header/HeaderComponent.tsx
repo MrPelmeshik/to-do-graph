@@ -1,5 +1,5 @@
 import React from "react";
-import headerStyle from './style.module.css';
+import css from './style.module.css';
 import {IHeaderComponent} from "./type";
 import {Header} from "@consta/uikit/Header";
 import {LogoComponent} from "./Logo";
@@ -11,13 +11,13 @@ export const HeaderComponent: React.FC<IHeaderComponent> = ({}) =>
 {
     return <Header className={'shadowCard'}
                    leftSide={
-                    <div className={headerStyle.field}>
+                    <div className={css.field}>
                         <LogoComponent />
                         <PaginationComponent />
                     </div>
                    }
                    rightSide={
-                    <div  className={headerStyle.field}>
+                    <div  className={css.field}>
                         <ThemeSelectorComponent />
                     </div>
                    }

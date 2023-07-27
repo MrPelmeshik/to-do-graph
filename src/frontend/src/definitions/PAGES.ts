@@ -4,7 +4,7 @@ import {IconTest} from "@consta/icons/IconTest";
 export const PAGES: IPageItem[] = [
     {
         key: 0,
-        label: 'Worked field',
+        label: 'Graph',
     },
     {
         key: 1,
