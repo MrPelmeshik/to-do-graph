@@ -1,7 +1,8 @@
 import React, {JSX, useEffect, useRef, useState} from "react";
 import css from './style.module.css';
 import {IGraphComponent} from "./type";
-import {CardComponent, ICard} from "./Card";
+import {CardComponent, ICard} from "./CardArea/Card";
+import {CardAreaComponent} from "./CardArea";
 
 
 export const GraphComponent: React.FC<IGraphComponent>
@@ -15,51 +16,23 @@ export const GraphComponent: React.FC<IGraphComponent>
         zoom: 1
     });
     const [isDraggingField, setIsDraggingField] = useState(false);
-    const [cards, setCards] = useState<ICard[]>([
-        {
-            id: 1,
-            title: 'card #1',
-            position: {
-                left: -20,
-                top: -60,
-            }
-        },
-        {
-            id: 2,
-            title: 'card #2',
-            position: {
-                left: 230,
-                top: 150,
-            }
-        },
-        {
-            id: 3,
-            title: 'card #3',
-            position: {
-                left: 330,
-                top: 350,
-            }
-        },
-        {
-            id: 4,
-            title: 'card #4',
-            position: {
-                left: 1200,
-                top: 600,
-            }
-        },
-    ]);
+    const [existSelectedCard, setExistSelectedCard] = useState(false);
 
-    const handleMouseDown = () => setIsDraggingField(true);
-    const handleMouseUp = () => setIsDraggingField(false);
+    const handleMouseDown = () => {
+        console.log('Area handleMouseDown')
+        setIsDraggingField(true);
+    }
+    const handleMouseUp = (event: React.MouseEvent) => {
+        console.log('Area handleMouseUp')
+        setIsDraggingField(false);
+    }
     const handleMouseMove = (e: React.MouseEvent) => {
-        if (!isDraggingField) {
+        if (!existSelectedCard || !isDraggingField) {
             return;
         }
 
         if (e.buttons !== 1) {
             setIsDraggingField(false);
-
             return;
         }
 
@@ -71,10 +44,6 @@ export const GraphComponent: React.FC<IGraphComponent>
             }
         }));
     };
-    const getCards = (): JSX.Element[] => cards.map((card, index) =>
-        <CardComponent key={card.id}
-                       card={card}
-        />);
 
     useEffect(() => {
         if (!layerRef.current) {
@@ -109,16 +78,8 @@ export const GraphComponent: React.FC<IGraphComponent>
                 onMouseUp={handleMouseUp}
                 onMouseMove={handleMouseMove}
     >
-        <div className={css.container}>
-            <div className={css.nodesContainer}
-                 style={{
-                     transform: `translate(${viewport.offset.x * viewport.zoom}px, ${
-                         viewport.offset.y * viewport.zoom
-                     }px) scale(${viewport.zoom})`
-                 }}
-            >
-                {getCards()}
-            </div>
-        </div>
+        <CardAreaComponent viewport={viewport}
+                           setExistSelectedCard={setExistSelectedCard}
+        />
     </div>
 }
