@@ -2,7 +2,7 @@ import React from 'react';
 import appStyle from './App.module.css';
 import {Layout} from "@consta/uikit/Layout";
 import {Theme} from "@consta/uikit/Theme";
-import {FooterComponent, HeaderComponent, MainComponent, MenuComponent} from "./components";
+import {FooterComponent, HeaderComponent, WorkAreaComponent, MenuComponent} from "./components";
 import {useAppSelector} from "./store/сonfigureStore";
 
 
@@ -23,10 +23,10 @@ export const App = () => {
         <Layout flex={0}
                 className={'z10'}
         >
-          <MenuComponent/>
+          <MenuComponent />
         </Layout>
         <Layout flex={1}>
-          <MainComponent/>
+          <WorkAreaComponent />
         </Layout>
       </Layout>
       {/*<Layout flex={1}

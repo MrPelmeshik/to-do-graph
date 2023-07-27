@@ -1,12 +1,12 @@
 import React, {JSX, useEffect, useRef, useState} from "react";
 import workedFieldStyle from './style.module.css';
-import {IWorkedFieldComponent} from "./type";
+import {IGraphComponent} from "./type";
 import {CardComponent, ICard} from "./Card";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 
 
-export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
+export const GraphComponent: React.FC<IGraphComponent>
     = ({}) => {
     const layerRef = useRef<HTMLDivElement>(null);
     const [viewport, setViewport] = useState({
@@ -51,7 +51,6 @@ export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
             }
         },
     ]);
-
 
     const handleMouseDown = () => setIsDraggingField(true);
     const handleMouseUp = () => setIsDraggingField(false);
@@ -106,12 +105,7 @@ export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
         };
     }, [setViewport]);
 
-    return <DndProvider backend={HTML5Backend}>
-        {getCards()}
-    </DndProvider>
-
-
-    /*return <div className={workedFieldStyle.field}
+    return <div className={workedFieldStyle.field}
                 ref={layerRef}
                 onMouseDown={handleMouseDown}
                 onMouseUp={handleMouseUp}
@@ -125,10 +119,8 @@ export const WorkedFieldComponent: React.FC<IWorkedFieldComponent>
                      }px) scale(${viewport.zoom})`
                  }}
             >
-                <DndProvider backend={HTML5Backend}>
-                    {getCards()}
-                </DndProvider>
+                {getCards()}
             </div>
         </div>
-    </div>*/
+    </div>
 }
