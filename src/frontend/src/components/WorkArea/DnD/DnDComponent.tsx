@@ -1,6 +1,7 @@
 import React from "react";
 import {IDnDComponent} from "./test";
 import css from './style.module.css';
+import {DnDAreaComponent} from "./DndArea";
 
 export const DnDComponent: React.FC<IDnDComponent>
     = ({}) => {
@@ -11,6 +12,6 @@ export const DnDComponent: React.FC<IDnDComponent>
         alignItems: 'center',
         justifyContent: 'center',
     }}>
-
+        <DnDAreaComponent />
     </div>
 }

@@ -10,7 +10,7 @@ export const PAGES: IPageItem[] = [
         key: 1,
         label: 'DnD',
         tag: {
-            label: 'test',
+            label: '',
             icon: IconTest,
             status: 'normal',
         },
