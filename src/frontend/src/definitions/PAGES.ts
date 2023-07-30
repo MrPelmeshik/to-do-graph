@@ -15,4 +15,13 @@ export const PAGES: IPageItem[] = [
             status: 'normal',
         },
     },
+    {
+        key: 2,
+        label: 'Task boards',
+        tag: {
+            label: '',
+            icon: IconTest,
+            status: 'normal',
+        },
+    }
 ]

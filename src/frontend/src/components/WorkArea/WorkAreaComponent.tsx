@@ -5,6 +5,7 @@ import {GraphComponent} from "./Graph";
 import {DnDComponent} from "./DnD";
 import {useAppSelector} from "../../store/сonfigureStore";
 import {PAGES} from "../../definitions";
+import {NotFoundComponent} from "./NotFound";
 
 export const WorkAreaComponent: React.FC<IWorkAreaComponent>
     = ({}) => {
@@ -12,9 +13,9 @@ export const WorkAreaComponent: React.FC<IWorkAreaComponent>
 
     const getPage = (): JSX.Element => {
         switch (currentPage.key) {
-            case PAGES[0].key: return <GraphComponent />;
-            case PAGES[1].key: return <DnDComponent />;
-            default: return <GraphComponent />;
+            case 0: return <GraphComponent />;
+            case 1: return <DnDComponent />;
+            default: return <NotFoundComponent />;
         }
     };
 

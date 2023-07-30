@@ -5,4 +5,5 @@ export {
     WorkAreaComponent,
     DnDComponent,
     GraphComponent,
+    NotFoundComponent,
 } from "./WorkArea";
