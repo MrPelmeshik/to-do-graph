@@ -5,6 +5,11 @@ export const PAGES: IPageItem[] = [
     {
         key: 0,
         label: 'Graph',
+        tag: {
+            label: '',
+            icon: IconTest,
+            status: 'normal',
+        },
     },
     {
         key: 1,
@@ -12,7 +17,7 @@ export const PAGES: IPageItem[] = [
         tag: {
             label: '',
             icon: IconTest,
-            status: 'normal',
+            status: 'warning',
         },
     },
     {

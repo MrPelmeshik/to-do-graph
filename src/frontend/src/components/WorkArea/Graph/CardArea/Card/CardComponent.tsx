@@ -10,7 +10,7 @@ export const CardComponent: React.FC<ICardComponent>
         setExistSelectedCard(!isDraggingField);
     }, [isDraggingField]);
 
-    const handleMouseDown = () => {
+    const handleMouseDown = (event: React.MouseEvent) => {
         console.log('Card handleMouseDown');
         setIsDraggingField(true);
     }
@@ -19,7 +19,7 @@ export const CardComponent: React.FC<ICardComponent>
         setIsDraggingField(false);
     }
     const handleMouseMove = (event: React.MouseEvent) => {
-        // console.log('handleMouseMove', event);
+        console.log('handleMouseMove', event);
         if (!isDraggingField) {
             return;
         }
