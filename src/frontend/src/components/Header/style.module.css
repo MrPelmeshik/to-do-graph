@@ -1,0 +1,12 @@
+.main {
+
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    column-gap: 2rem;
+}

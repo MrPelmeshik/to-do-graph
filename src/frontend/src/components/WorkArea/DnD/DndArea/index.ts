@@ -1,0 +1,1 @@
+export {DnDAreaComponent} from "./DnDAreaComponent";

@@ -1,0 +1,1 @@
+export {DnDComponent} from "./DnDComponent";

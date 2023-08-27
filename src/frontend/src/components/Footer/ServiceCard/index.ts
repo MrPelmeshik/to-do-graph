@@ -1,0 +1,1 @@
+export {ServiceCardComponent} from './ServiceCardComponent';

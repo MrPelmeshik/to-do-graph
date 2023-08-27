@@ -1,0 +1,6 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 400px;
+    min-height: 400px;
+}

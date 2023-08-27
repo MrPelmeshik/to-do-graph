@@ -36,16 +36,24 @@ code {
   justify-content: space-between;
 }
 
-.borderCard {
-  padding: 0.05rem;
-  border: 0.2rem solid rgba(0, 65, 102, 0.2);
-  border-radius: 0.5rem;
-  margin: 0.2rem;
+/* region card definition */
+
+.shadowCard {
+  box-shadow: var(--color-control-bg-border-default) 0 0 15px 0vw;
+  background-color: var(--color-bg-default);
 }
 
-.dottedCard {
-  border: 1px dotted;
+.lineBorder {
+  border: 1px solid var(--color-control-bg-border-default);
 }
+
+.dottedBorder {
+  border: 1px dotted var(--color-control-bg-border-default);
+}
+
+/* endregion */
+
+/* region padding definition */
 
 .p-l-xs {
   padding-left: var(--space-xs);
@@ -207,6 +215,10 @@ code {
   padding-right: var(--space-6xl);
 }
 
+/* endregion */
+
+/* region margin definition */
+
 .m-l-xs {
   margin-left: var(--space-xs);
 }
@@ -366,3 +378,110 @@ code {
 .m-r-6xl {
   margin-right: var(--space-6xl);
 }
+
+/* endregion */
+
+/* region round definition */
+
+.r-xs {
+  border-radius: var(--space-xs);
+}
+
+.r-s {
+  border-radius: var(--space-s);
+}
+
+.r-m {
+  border-radius: var(--space-m);
+}
+
+.r-l {
+  border-radius: var(--space-l);
+}
+
+
+.r-l-l {
+  border-radius: 0 var(--space-l) var(--space-l) 0;
+}
+
+.r-r-l {
+  border-radius: var(--space-l) 0 0 var(--space-l);
+}
+
+.r-b-l {
+  border-radius: 0 0 var(--space-l) var(--space-l);
+}
+
+.r-t-l {
+  border-radius: var(--space-l) var(--space-l) 0 0;
+}
+
+.r-xl {
+  border-radius: var(--space-xl);
+}
+
+.r-2xl {
+  border-radius: var(--space-2xl);
+}
+
+.r-3xl {
+  border-radius: var(--space-3xl);
+}
+
+.r-4xl {
+  border-radius: var(--space-4xl);
+}
+
+.r-5xl {
+  border-radius: var(--space-5xl);
+}
+
+.r-6xl {
+  border-radius: var(--space-6xl);
+}
+
+/* endregion */
+
+/* region z-index definition */
+
+.z-1 {
+  z-index: -1;
+}
+
+.z0 {
+  z-index: 0;
+}
+
+.z1 {
+  z-index: 1;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.z3 {
+  z-index: 3;
+}
+
+.z4 {
+  z-index: 4;
+}
+
+.z5 {
+  z-index: 5;
+}
+
+.z10 {
+  z-index: 10;
+}
+
+.z100 {
+  z-index: 100;
+}
+
+.z1000 {
+  z-index: 1000;
+}
+
+/* endregion */

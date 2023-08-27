@@ -1,0 +1,1 @@
+export {ThemeSelectorComponent} from './ThemeSelectorComponent';

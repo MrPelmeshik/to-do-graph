@@ -1,0 +1,8 @@
+.main {
+    display: flex;
+    font-size: .7rem;
+    column-gap: .3rem;
+    background-color: var(--color-bg-ghost);
+    padding: .4rem;
+    border-radius: 1.4rem;
+}

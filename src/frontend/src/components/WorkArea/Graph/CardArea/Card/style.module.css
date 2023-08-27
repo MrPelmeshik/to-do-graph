@@ -1,0 +1,14 @@
+.main {
+    position: absolute;
+    width: 6rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease-in-out;
+}
+
+.main:hover {
+    scale: 1.05;
+    box-shadow: var(--color-control-bg-border-default) 0 0 15px 0vw;
+}
